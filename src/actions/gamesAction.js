@@ -1,5 +1,5 @@
 import axios from "axios";
-import {newGamesURL, popularGamesURL, upcomingGamesURL} from "../api";
+import {popularGamesURL, upcomingGamesURL, newGamesURL} from "../api";
 
 // Action creator
 

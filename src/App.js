@@ -1,6 +1,7 @@
 import "./App.css";
 import "./api";
 import React from "react";
+import {Route} from "react-router-dom";
 
 // Components
 import Home from "./pages/Home";
@@ -8,8 +9,9 @@ import Home from "./pages/Home";
 function App() {
     return (
         <div className={"App"}>
-            <h1>Throne of Games</h1>
-            <Home />
+            <Route path={["/game:id", "/"]}>
+                <Home />
+            </Route>
         </div>
     );
 }

@@ -24,11 +24,17 @@ const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
-// Popular games
+// Home
 const popularGames = `games?dates=${lastYear},${currentDate}&ordering=-rating`;
 const upcomingGames = `games?dates=${currentDate},${nextYear}&ordering=-added`;
-const newGames = `games?dates=${lastYear},${currentDate}&ordering=-released`;
+const newGames = `games?dates=${lastYear},${currentDate}&ordering=-created&page_size=10`;
 
 export const popularGamesURL = () => `${api}${popularGames}${key}`;
 export const upcomingGamesURL = () => `${api}${upcomingGames}${key}`;
 export const newGamesURL = () => `${api}${newGames}${key}`;
+
+// Details of a specific game
+export const gameDetailsURL = gameId => `${api}games/${gameId}${key}`;
+//
+export const gameImagesURL = gameId =>
+    `${api}games/${gameId}/screenshots${key}`;
