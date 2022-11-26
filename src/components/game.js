@@ -13,12 +13,21 @@ const Game = ({name, image, id}) => {
         document.body.style.overflow = "hidden";
         dispatch(loadGameDetails(id));
     };
+    const newId = id.toString();
+    console.log(`id = ${typeof newId}`);
     return (
         <Tilt tiltReverse={true} tiltMaxAngleX={5} tiltMaxAngleY={5}>
-            <StyledGame onClick={loadGameDetailsHandler}>
-                <Link to={`/game/${id}`}>
-                    <img src={image} alt={name} />
-                    <h3>{name}</h3>
+            <StyledGame
+                animate={"show"}
+                layoutId={newId}
+                onClick={loadGameDetailsHandler}>
+                <Link to={`/game/${newId}`}>
+                    <motion.img
+                        layoutId={`image ${newId}`}
+                        src={image}
+                        alt={name}
+                    />
+                    <motion.h3 layoutId={`title ${newId}`}>{name}</motion.h3>
                 </Link>
             </StyledGame>
         </Tilt>

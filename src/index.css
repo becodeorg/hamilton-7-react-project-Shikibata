@@ -12,8 +12,8 @@
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #151515;
-  color: #F5F5F5;
+  background-color: #F5F5F5;
+  color: #151515;
 }
 -webkit-scrollbar-thumb {
   width: 10rem;
