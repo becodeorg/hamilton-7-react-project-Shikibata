@@ -57,6 +57,7 @@ const StyledGame = styled(motion.div)`
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-bottom: 0.6rem;
     }
 `;
 

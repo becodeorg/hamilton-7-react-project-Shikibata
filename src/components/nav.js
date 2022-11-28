@@ -25,7 +25,7 @@ const Nav = () => {
             <LogoNav onClick={clearSearched}>
                 <img src={logo} alt={"log"} />
             </LogoNav>
-            <form className={"formSearch"}>
+            <SearchBox>
                 <input
                     value={textInput}
                     onChange={inputHandler}
@@ -34,7 +34,7 @@ const Nav = () => {
                 <button onClick={submitSearch} type={"submit"}>
                     Search
                 </button>
-            </form>{" "}
+            </SearchBox>{" "}
         </Navbar>
     );
 };
@@ -44,13 +44,30 @@ const Navbar = styled(motion.div)`
     align-items: center;
     justify-content: space-between;
     padding: 1rem 3rem;
+    width: 100%;
+    z-index: 9999;
+    background-color: #202020;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: transparent;
+    transition: 0.2s;
 `;
 
 const LogoNav = styled(motion.div)`
     img {
-        height: 5rem;
+        height: 3rem;
         cursor: pointer;
     }
+`;
+
+const SearchBox = styled(motion.div)`
+    display: flex;
+    justify-content: center;
+    height: 55px;
+    align-items: center;
+    max-width: 500px;
 `;
 
 export default Nav;
