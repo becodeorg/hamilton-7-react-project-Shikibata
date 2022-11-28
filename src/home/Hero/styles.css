@@ -1,0 +1,39 @@
+.hero {
+    margin-top: 7rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 72px;
+    background: linear-gradient(to right, #151515 0%, #ed474a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+.hero-paragraph {
+    width: 30%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.redirect-link {
+    border: 1px solid #151515;
+    padding: 0.7rem;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #151515;
+}
+
+.redirect-link:hover {
+    background-color: #151515;
+    color: #F5F5F5;
+}

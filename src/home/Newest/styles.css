@@ -1,0 +1,64 @@
+
+.newest {
+    margin-top: 4rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newest-paragraph {
+    max-width: 32rem;
+    margin: 2rem 0;
+}
+
+.newest {
+    background-image: linear-gradient(
+            to right,
+            rgba(245, 245, 255, 1),
+            rgba(245, 245, 255, 1),
+            rgba(245, 245, 255, 0.9),
+            rgba(245, 245, 255, 0.8)
+    ),
+    url('../../assets/images/EGS_Forspoken_LuminousProductions_S1_2560x1440-f2f99882e9d396b21fb65735d266385a.jpg');
+}
+
+
+.newest-container {
+    height: 100%;
+    width: 100%;
+    padding-left: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+
+    .newest {
+        background-image: linear-gradient(
+                to right,
+                rgba(245, 245, 255, 1),
+                rgba(245, 245, 255, 1),
+                rgba(245, 245, 255, 0.2),
+                rgba(245, 245, 255, 0)
+        ),
+        url('../../assets/images/EGS_Forspoken_LuminousProductions_S1_2560x1440-f2f99882e9d396b21fb65735d266385a.jpg');
+    }
+
+    .newest-container {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .newest {
+        background-position: top;
+    }
+}

@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import logo from "../assets/images/logo.png";
-
+import {FaSearch} from "react-icons/fa";
 const Nav = () => {
     const dispatch = useDispatch();
     const [textInput, setTextInput] = useState("");
@@ -22,7 +22,7 @@ const Nav = () => {
     };
     return (
         <Navbar>
-            <LogoNav onClick={clearSearched}>
+            <LogoNav onClick={clearSearched} href={Home}>
                 <img src={logo} alt={"log"} />
             </LogoNav>
             <SearchBox>
@@ -30,9 +30,10 @@ const Nav = () => {
                     value={textInput}
                     onChange={inputHandler}
                     type={"text"}
+                    placeholder={"Search your favorite game"}
                 />{" "}
                 <button onClick={submitSearch} type={"submit"}>
-                    Search
+                    <FaSearch />
                 </button>
             </SearchBox>{" "}
         </Navbar>
@@ -42,6 +43,7 @@ const Nav = () => {
 const Navbar = styled(motion.div)`
     display: flex;
     align-items: center;
+    position: fixed;
     justify-content: space-between;
     padding: 1rem 3rem;
     width: 100%;
@@ -64,10 +66,29 @@ const LogoNav = styled(motion.div)`
 
 const SearchBox = styled(motion.div)`
     display: flex;
-    justify-content: center;
-    height: 55px;
-    align-items: center;
-    max-width: 500px;
+    width: 25%;
+
+    input {
+        border: none;
+        outline: none;
+        padding: 0.4rem;
+        background-color: #d5d5e0;
+        border-radius: 20px;
+        width: 100%;
+        color: black;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding-left: 0.5rem;
+
+        FaSearch {
+            width: 50px;
+        }
+    }
 `;
 
 export default Nav;

@@ -13,20 +13,8 @@
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #151515;
-  color: #F5F5F5;
-}
--webkit-scrollbar-thumb {
-  width: 10rem;
+  background-color: #F5F5F5;
+  color: #151515;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-h3 {
-  color: white;
-  align-items: center;
-}
 

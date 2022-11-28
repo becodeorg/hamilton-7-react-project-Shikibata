@@ -1,17 +1,17 @@
-import React, {useEffect} from "react";
-import GameDetails from "../components/gameDetails";
-import {useDispatch, useSelector} from "react-redux";
-import {loadGames} from "../actions/gamesAction";
-import {useLocation} from "react-router-dom";
+export {Hero} from "./Hero";
+export {Trending} from "./Trending";
+export {Upcoming} from "./Upcoming";
+export {Newest} from "./Newest";
 
-// styling
+/*// styling
 import styled from "styled-components";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
 
 // Components
 import Game from "../components/game";
 import Hero from "../assets/images/carl-raw-m3hn2Kn5Bns-unsplash.jpg";
-const Home = () => {
+
+const Index = () => {
     const location = useLocation();
     const idPath = location.pathname.split("/")[2];
 
@@ -30,6 +30,18 @@ const Home = () => {
                     <img src={Hero} alt={"log"} />
                 </div>
             </HeroDiv>
+            <div className={"trending"}>
+                <div className={"trending-container"}>
+                    <h2 className={"trending-title"}>
+                        checkout hot trending games
+                    </h2>
+                    <p className={"trending-paragraph"}>
+                        Checkout the most trending games of the market. Pleasure
+                        is guaranteed !
+                    </p>
+                    <Route path={["/game:id", "/"]}>Checkout trendings</Route>
+                </div>
+            </div>
             <GameList>
                 <AnimateSharedLayout type={"crossfade"}>
                     <AnimatePresence>
@@ -65,30 +77,9 @@ const Home = () => {
                             />
                         ))}
                     </Games>
-                    <h2>Upcoming games</h2>
-                    <Games>
-                        {upcoming.slice(0, 6).map(game => (
-                            <Game
-                                name={game.name}
-                                released={game.released}
-                                id={game.id}
-                                image={game.background_image}
-                                key={game.id}
-                            />
-                        ))}
-                    </Games>
+
                     <h2>Newest Games</h2>
-                    <Games>
-                        {newGames.slice(0, 6).map(game => (
-                            <Game
-                                name={game.name}
-                                released={game.released}
-                                id={game.id}
-                                image={game.background_image}
-                                key={game.id}
-                            />
-                        ))}
-                    </Games>
+
                 </AnimateSharedLayout>
             </GameList>
         </div>
@@ -156,4 +147,4 @@ const HeroDiv = styled(motion.div)`
     }
 `;
 
-export default Home;
+export default Index;*/
