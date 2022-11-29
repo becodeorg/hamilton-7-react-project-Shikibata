@@ -17,10 +17,10 @@
 .trending {
     background-image: linear-gradient(
             to right,
-            rgba(245, 245, 255, 1),
-            rgba(245, 245, 255, 1),
-            rgba(245, 245, 255, 0.9),
-            rgba(245, 245, 255, 0.8)
+            rgba(245, 245, 245, 1),
+            rgba(245, 245, 245, 1),
+            rgba(245, 245, 245, 0.9),
+            rgba(245, 245, 245, 0.8)
     ),
     url('../../assets/images/A-Plague-Tale-Requiem-cover.jpg');
 }
@@ -42,10 +42,10 @@
     .trending {
         background-image: linear-gradient(
                 to right,
-                rgba(245, 245, 255, 1),
-                rgba(245, 245, 255, 1),
-                rgba(245, 245, 255, 0.2),
-                rgba(245, 245, 255, 0)
+                rgba(245, 245, 245, 1),
+                rgba(245, 245, 245, 1),
+                rgba(245, 245, 245, 0.2),
+                rgba(245, 245, 245, 0)
         ),
         url('../../assets/images/A-Plague-Tale-Requiem-cover.jpg');
     }

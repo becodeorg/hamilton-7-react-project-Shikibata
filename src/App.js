@@ -1,4 +1,3 @@
-import "./App.css";
 import "./api";
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
@@ -12,6 +11,7 @@ import Nav from "./components/nav";
 import Footer from "./components/footer";
 import GameDetails from "./components/gameDetails";
 import "./pages/globalstyles.css";
+
 function App() {
     return (
         <div className={"App"}>

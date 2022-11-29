@@ -18,10 +18,10 @@
 .newest {
     background-image: linear-gradient(
             to right,
-            rgba(245, 245, 255, 1),
-            rgba(245, 245, 255, 1),
-            rgba(245, 245, 255, 0.9),
-            rgba(245, 245, 255, 0.8)
+            rgba(245, 245, 245, 1),
+            rgba(245, 245, 245, 1),
+            rgba(245, 245, 245, 0.9),
+            rgba(245, 245, 245, 0.8)
     ),
     url('../../assets/images/EGS_Forspoken_LuminousProductions_S1_2560x1440-f2f99882e9d396b21fb65735d266385a.jpg');
 }
@@ -43,10 +43,10 @@
     .newest {
         background-image: linear-gradient(
                 to right,
-                rgba(245, 245, 255, 1),
-                rgba(245, 245, 255, 1),
-                rgba(245, 245, 255, 0.2),
-                rgba(245, 245, 255, 0)
+                rgba(245, 245, 245, 1),
+                rgba(245, 245, 245, 1),
+                rgba(245, 245, 245, 0.2),
+                rgba(245, 245, 245, 0)
         ),
         url('../../assets/images/EGS_Forspoken_LuminousProductions_S1_2560x1440-f2f99882e9d396b21fb65735d266385a.jpg');
     }

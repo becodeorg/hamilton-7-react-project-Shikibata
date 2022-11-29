@@ -9,11 +9,8 @@ import {
     SiPlaystation4,
 } from "react-icons/si";
 
-const GameDetails = () => {
-    const idPath = location.pathname.split("/")[2];
-    console.log("NewIdPath", typeof idPath + idPath);
+const GameDetails = ({pathId}) => {
     const handleRating = rating => rating * 4;
-
     const playstation4 = <SiPlaystation4 />;
     const playstation5 = <SiPlaystation5 />;
     const steam = <FaSteam />;
@@ -30,8 +27,7 @@ const GameDetails = () => {
                 return playstation5;
             case "Steam":
                 return steam;
-            case "Xbox One":
-                return xbox;
+
             case "Xbox Series S/X":
                 return xbox;
             case "PC":
@@ -43,60 +39,64 @@ const GameDetails = () => {
         }
     };
 
-    const {images, game} = useSelector(state => state.details);
+    const {images, game, isLoading} = useSelector(state => state.details);
 
     return (
         <>
-            <div className={"card-container"}>
-                <motion.div
-                    className={"card-details"}
-                    initial={{y: 10, opacity: 0}}
-                    animate={{y: 20, opacity: 1}}
-                    exit={{y: -20, opacity: 0}}
-                    transition={{duration: 0.4}}
-                    layoutId={idPath}>
-                    <div className={"card-main"}>
-                        <motion.h3 layoutId={`title ${idPath}`}>
-                            {game.name}
-                        </motion.h3>
-                        <div className={"rating"}>
-                            <FaStar />
-                            <p>{handleRating(game.rating)}/20</p>
-                        </div>
-                        <div className={"card-info"}>
-                            <h3>Platform</h3>
-                            <div className={"card-platform"}>
-                                {game.platforms.map(data => (
-                                    <div key={data.platform.id}>
-                                        {platformIconHandler(
-                                            data.platform.name,
-                                        )}
-                                    </div>
-                                ))}
+            {" "}
+            {!isLoading && (
+                <motion.div className={"card-container"} layoutId={pathId}>
+                    <motion.div
+                        className={"card-details"}
+                        initial={{y: 10, opacity: 0}}
+                        animate={{y: 20, opacity: 1}}
+                        exit={{y: -20, opacity: 0}}
+                        transition={{duration: 0.4}}
+                        layoutId={pathId}>
+                        <div className={"card-main"}>
+                            <motion.h3 layoutId={`title ${pathId}`}>
+                                {game.name}
+                            </motion.h3>
+                            <div className={"rating"}>
+                                <FaStar />
+                                <p>{handleRating(game.rating)}/20</p>
+                            </div>
+                            <div className={"card-info"}>
+                                <h3>Platform</h3>
+                                <div className={"card-platform"}>
+                                    {game.platforms.map(data => (
+                                        <div key={data.platform.id}>
+                                            {platformIconHandler(
+                                                data.platform.name,
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={"card-media"}>
-                        <motion.img
-                            layoutId={`image ${idPath}`}
-                            src={game.background_image}
-                            alt={game.name}
-                        />
-                    </div>
-                    <div className={"card-description"}>
-                        <p>={game.description_raw}</p>
-                    </div>
-                    <div className={"card-gallery"}>
-                        {images.results.map(image => (
-                            <img
-                                src={image.image}
-                                alt={image.name}
-                                key={image.id}
+                        <div className={"card-media"}>
+                            <motion.img
+                                layoutId={`image ${pathId}`}
+                                src={game.background_image}
+                                alt={game.name}
                             />
-                        ))}
-                    </div>
+                        </div>
+                        <div className={"card-description"}>
+                            <p>={game.description_raw}</p>
+                        </div>
+                        <div className={"card-gallery"}>
+                            {/* eslint-disable-next-line no-shadow */}
+                            {images.results.map(images => (
+                                <img
+                                    src={images.image}
+                                    alt={images.name}
+                                    key={images.id}
+                                />
+                            ))}
+                        </div>
+                    </motion.div>
                 </motion.div>
-            </div>
+            )}
         </>
     );
 };

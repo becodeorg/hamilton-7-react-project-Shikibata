@@ -13,6 +13,7 @@ export const loadGameDetails = id => async dispatch => {
         payload: {
             game: gameData.data,
             images: gameImagesData.data,
+            isLoading: false,
         },
     });
 };
