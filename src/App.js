@@ -36,8 +36,8 @@ function App() {
                     <Route path={"/game"}>
                         <GameDetails />
                     </Route>
-                    <Footer />
                 </Switch>
+                <Footer />
             </BrowserRouter>
         </div>
     );

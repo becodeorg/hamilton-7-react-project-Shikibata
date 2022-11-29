@@ -8,7 +8,9 @@ import {
     SiPlaystation5,
     SiPlaystation4,
 } from "react-icons/si";
-
+import "./gameDetails.css";
+import {SwiperSlide, Swiper} from "swiper/react";
+import "swiper/swiper-bundle.css";
 const GameDetails = ({pathId}) => {
     const handleRating = rating => rating * 4;
     const playstation4 = <SiPlaystation4 />;
@@ -40,7 +42,7 @@ const GameDetails = ({pathId}) => {
     };
 
     const {images, game, isLoading} = useSelector(state => state.details);
-
+    console.log(images);
     return (
         <>
             {" "}
@@ -53,47 +55,50 @@ const GameDetails = ({pathId}) => {
                         exit={{y: -20, opacity: 0}}
                         transition={{duration: 0.4}}
                         layoutId={pathId}>
-                        <div className={"card-main"}>
-                            <motion.h3 layoutId={`title ${pathId}`}>
-                                {game.name}
-                            </motion.h3>
-                            <div className={"rating"}>
-                                <FaStar />
-                                <p>{handleRating(game.rating)}/20</p>
-                            </div>
-                            <div className={"card-info"}>
-                                <h3>Platform</h3>
-                                <div className={"card-platform"}>
-                                    {game.platforms.map(data => (
-                                        <div key={data.platform.id}>
-                                            {platformIconHandler(
-                                                data.platform.name,
-                                            )}
-                                        </div>
-                                    ))}
+                        <motion.h1
+                            className={"card-title"}
+                            layoutId={`title ${pathId}`}>
+                            {game.name}
+                        </motion.h1>
+                        <div className={"rating"}>
+                            <FaStar className={"star"} />
+                            <p>{handleRating(game.rating)}/20</p>
+                        </div>
+                        <div className={"card-platform"}>
+                            {game.platforms.map(data => (
+                                <div key={data.platform.id}>
+                                    {platformIconHandler(data.platform.name)}
                                 </div>
-                            </div>
+                            ))}
                         </div>
                         <div className={"card-media"}>
                             <motion.img
+                                className={"card-image"}
                                 layoutId={`image ${pathId}`}
                                 src={game.background_image}
                                 alt={game.name}
                             />
                         </div>
-                        <div className={"card-description"}>
-                            <p>={game.description_raw}</p>
-                        </div>
-                        <div className={"card-gallery"}>
-                            {/* eslint-disable-next-line no-shadow */}
-                            {images.results.map(images => (
-                                <img
-                                    src={images.image}
-                                    alt={images.name}
-                                    key={images.id}
-                                />
+                        <p className={"card-description"}>
+                            {game.description_raw}
+                        </p>
+                        <Swiper
+                            className={"card-gallery"}
+                            spaceBetween={1}
+                            slidesPerView={images.results.length - 1}
+                            onSlideChange={() => console.log("slide change")}
+                            onSwiper={swiper => console.log(swiper)}>
+                            {images.results.map((image, index) => (
+                                // eslint-disable-next-line react/no-array-index-key
+                                <SwiperSlide key={index}>
+                                    <img
+                                        src={image.image}
+                                        className={"image-carousel"}
+                                        alt={image.name}
+                                    />
+                                </SwiperSlide>
                             ))}
-                        </div>
+                        </Swiper>
                     </motion.div>
                 </motion.div>
             )}
