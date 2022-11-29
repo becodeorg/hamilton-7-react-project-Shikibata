@@ -3,22 +3,29 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {loadGames} from "../../actions/gamesAction";
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
+import GameDetails from "../../components/gameDetails";
+import {useLocation} from "react-router-dom";
 import "./styles.css";
 
-export const UpcomingPage = () => {
+export const SearchPage = () => {
+    const location = useLocation();
+    const pathId = location.pathname.split("/")[2];
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(loadGames());
     }, [dispatch]);
     // extract the data from the store
-    const {upcoming} = useSelector(state => state.games);
+    const {search} = useSelector(state => state.games);
 
     return (
         <div>
-            <h2 className={"page-title"}>Upcoming Games</h2>
+            <AnimatePresence>
+                {pathId && <GameDetails pathId={pathId} />}
+            </AnimatePresence>
+            <h2 className={"page-title"}>Searched Games</h2>
             <Games>
-                {upcoming.slice(0, 6).map(game => (
+                {search.map(game => (
                     <Game
                         name={game.name}
                         released={game.released}

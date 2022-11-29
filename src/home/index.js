@@ -1,7 +1,18 @@
-export {Hero} from "./Hero";
-export {Trending} from "./Trending";
-export {Upcoming} from "./Upcoming";
-export {Newest} from "./Newest";
+import React from "react";
+
+import {Hero} from "../home/Hero";
+import {Trending} from "../home/Trending";
+import {Upcoming} from "../home/Upcoming";
+import {Newest} from "../home/Newest";
+
+export const Home = () => (
+    <div>
+        <Hero />
+        <Trending />
+        <Upcoming />
+        <Newest />
+    </div>
+);
 
 /*// styling
 import styled from "styled-components";

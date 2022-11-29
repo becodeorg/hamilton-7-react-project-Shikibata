@@ -14,7 +14,6 @@ const Game = ({name, image, id}) => {
         dispatch(loadGameDetails(id));
     };
     const newId = id.toString();
-    console.log(`id = ${typeof newId}`);
     return (
         <Tilt tiltReverse={true} tiltMaxAngleX={5} tiltMaxAngleY={5}>
             <StyledGame

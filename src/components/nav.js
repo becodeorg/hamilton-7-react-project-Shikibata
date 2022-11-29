@@ -5,6 +5,8 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 import logo from "../assets/images/logo.png";
 import {FaSearch} from "react-icons/fa";
+import {Link} from "react-router-dom";
+
 const Nav = () => {
     const dispatch = useDispatch();
     const [textInput, setTextInput] = useState("");
@@ -22,9 +24,11 @@ const Nav = () => {
     };
     return (
         <Navbar>
-            <LogoNav onClick={clearSearched} href={Home}>
-                <img src={logo} alt={"log"} />
-            </LogoNav>
+            <Link to={"/home"} relative={"path"}>
+                <LogoNav onClick={clearSearched}>
+                    <img src={logo} alt={"log"} />
+                </LogoNav>
+            </Link>
             <SearchBox>
                 <input
                     value={textInput}
@@ -33,7 +37,9 @@ const Nav = () => {
                     placeholder={"Search your favorite game"}
                 />{" "}
                 <button onClick={submitSearch} type={"submit"}>
-                    <FaSearch />
+                    <Link to={"../search"} relative={"path"}>
+                        <FaSearch />
+                    </Link>
                 </button>
             </SearchBox>{" "}
         </Navbar>
