@@ -1,6 +1,6 @@
 import "./api";
 import React from "react";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import {Home} from "./home";
 import {NewestPage} from "./pages/Newest";
 import {UpcomingPage} from "./pages/Upcoming";
@@ -38,6 +38,7 @@ function App() {
                     </Route>
                 </Switch>
                 <Footer />
+                <Redirect to={"/home"} />
             </BrowserRouter>
         </div>
     );
