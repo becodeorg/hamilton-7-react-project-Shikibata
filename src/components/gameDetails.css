@@ -3,11 +3,11 @@
     display: flex;
     justify-content: center;
     margin-top: 3rem;
-    overflow-y: hidden;
 }
 
 .card-details {
     width: 80%;
+
 }
 
 .card-title {
@@ -25,7 +25,6 @@
     height: 12rem;
     position: relative;
     border-radius: 2%;
-    overflow: hidden;
 }
 .star {
     color: #ed474a;
@@ -53,6 +52,10 @@
 .card-description {
     line-height: 1.3rem;
     white-space: pre-line;
+}
+
+.slider {
+    cursor: grab;
 }
 
 @media only screen and (min-width: 500px) {

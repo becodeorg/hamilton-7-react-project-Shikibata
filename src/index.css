@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  overflow-y: scroll;
 }
 
   body {
@@ -16,7 +15,8 @@
   -moz-osx-font-smoothing: grayscale;
   background-color: #F5F5F5;
   color: #151515;
-  overflow: scroll;
 }
+
+
 
 

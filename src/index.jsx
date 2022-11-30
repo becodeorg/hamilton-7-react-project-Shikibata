@@ -13,7 +13,6 @@ import {BrowserRouter} from "react-router-dom";
 
 const composer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composer(applyMiddleware(thunk)));
-//import loadState from "./localstorage.js";
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
     <Provider store={store}>

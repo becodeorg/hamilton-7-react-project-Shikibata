@@ -2,7 +2,6 @@ import Game from "../../components/game";
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {loadGames} from "../../actions/gamesAction";
-import styled from "styled-components";
 import {AnimatePresence, motion} from "framer-motion";
 import GameDetails from "../../components/gameDetails";
 import {useLocation} from "react-router-dom";
@@ -25,7 +24,7 @@ export const SearchPage = () => {
                 {pathId && <GameDetails pathId={pathId} />}
             </AnimatePresence>
             <h2 className={"page-title"}>Searched Games</h2>
-            <Games>
+            <motion.div className={"game-card-container"}>
                 {search.map(game => (
                     <Game
                         name={game.name}
@@ -35,15 +34,7 @@ export const SearchPage = () => {
                         key={game.id}
                     />
                 ))}
-            </Games>
+            </motion.div>
         </div>
     );
 };
-
-const Games = styled(motion.div)`
-    min-height: 80vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
-`;

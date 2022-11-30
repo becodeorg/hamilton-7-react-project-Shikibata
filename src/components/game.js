@@ -10,7 +10,6 @@ const Game = ({name, image, id}) => {
     // Load game details handler
     const dispatch = useDispatch();
     const loadGameDetailsHandler = () => {
-        document.body.style.overflow = "hidden";
         dispatch(loadGameDetails(id));
     };
     const newId = id.toString();
@@ -34,8 +33,7 @@ const Game = ({name, image, id}) => {
 };
 
 const StyledGame = styled(motion.div)`
-    width: 20rem;
-    height: 18rem;
+    min-width: 100%;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.07);
     border-radius: 8px;
     text-align: center;
@@ -48,7 +46,7 @@ const StyledGame = styled(motion.div)`
 
     img {
         width: 100%;
-        height: 15rem;
+        height: 25rem;
         object-fit: cover;
     }
     h3 {
@@ -57,6 +55,16 @@ const StyledGame = styled(motion.div)`
         justify-content: center;
         align-items: center;
         padding-bottom: 0.6rem;
+        color: #f5f5f5;
+    }
+
+    @media (min-width: 768px) {
+        width: 20rem;
+
+        img {
+            width: 100%;
+            height: 20rem;
+        }
     }
 `;
 
